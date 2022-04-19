@@ -59,20 +59,12 @@ Matching Java Virtual Machines (5):
 
 So, we can't use that handy tool.
 
-So, I used `find ~ -name java | grep java 2>/dev/null`  to locate where brew installed openjdk, then I aliased it.
+So, I used `find / -name java | grep java 2>/dev/null`  to locate where brew installed openjdk, then I aliased it.
 
 ```
-[~/projects/home/maven_cli]  $ alias java
-alias java='/Users/steve/OpenJDK/jdk-18.jdk/Contents/Home/bin/java'
+export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.14.1/libexec/openjdk.jdk/Contents/Home
 ```
 
-And manually set the JAVA_HOME that maven needs:
-
-```
-[~/projects/home/maven_cli]  $ export JAVA_HOME=/Users/steve/OpenJDK/jdk-18.jdk/Contents/Home
-```
-
-This is a band-aid solution at best, but mvn does work after this.
 
 
 ## install maven
