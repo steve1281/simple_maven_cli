@@ -203,7 +203,7 @@ add to pom.xml
 
 ```
 
-and finally run:
+Rebuild `mvn package` and run:
 
 ```
 steve@minty:~/projects/maven/HelloWorld$ java -jar ./target/HelloWorld-1.0-SNAPSHOT.jar
