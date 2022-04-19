@@ -81,6 +81,7 @@ Default locale: en_CA, platform encoding: UTF-8
 OS name: "linux", version: "5.4.0-107-generic", arch: "amd64", family: "unix"
 
 ```
+* brew if MAC
 
 ## create a HelloWorld demo project
 
