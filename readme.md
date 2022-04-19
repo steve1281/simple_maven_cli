@@ -59,7 +59,7 @@ Matching Java Virtual Machines (5):
 
 So, we can't use that handy tool.
 
-So, I used `find / -name java | grep java 2>/dev/null`  to locate where brew installed openjdk, then I aliased it.
+So, I used `find / -name java | grep java 2>/dev/null`  to locate where brew installed openjdk:
 
 ```
 export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.14.1/libexec/openjdk.jdk/Contents/Home
