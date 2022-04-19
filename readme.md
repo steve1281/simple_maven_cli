@@ -40,6 +40,41 @@ OpenJDK 64-Bit Server VM (build 11.0.14.1+1-Ubuntu-0ubuntu1.20.04, mixed mode, s
 
 ```
 
+### some MAC notes
+
+My MAC uses Oracle JDKs.  In order to use OpenJDK, as installed above, I had to step through some hoops.
+
+First, the command `/usr/libexec/java_home -V` doesn't list my openJDK installation:
+
+```
+[~/projects/home/maven_cli]  $ /usr/libexec/java_home -V
+Matching Java Virtual Machines (5):
+    17.0.2 (x86_64) "Oracle Corporation" - "Java SE 17.0.2" /Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home
+    17.0.1 (x86_64) "Oracle Corporation" - "Java SE 17.0.1" /Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home
+    11.0.13 (x86_64) "Oracle Corporation" - "Java SE 11.0.13" /Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home
+    1.8.311.11 (x86_64) "Oracle Corporation" - "Java" /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+    1.8.0_311 (x86_64) "Oracle Corporation" - "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home
+/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home
+```
+
+So, we can't use that handy tool.
+
+So, I used `find ~ -name java | grep java 2>/dev/null`  to locate where brew installed openjdk, then I aliased it.
+
+```
+[~/projects/home/maven_cli]  $ alias java
+alias java='/Users/steve/OpenJDK/jdk-18.jdk/Contents/Home/bin/java'
+```
+
+And manually set the JAVA_HOME that maven needs:
+
+```
+[~/projects/home/maven_cli]  $ export JAVA_HOME=/Users/steve/OpenJDK/jdk-18.jdk/Contents/Home
+```
+
+This is a band-aid solution at best, but mvn does work after this.
+
+
 ## install maven
 
 ```
