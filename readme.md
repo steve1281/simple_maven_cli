@@ -7,6 +7,12 @@
 sudo apt-get install openjdk-11-jdk
 ```
 
+On a MAC,
+
+```
+brew install openjdk@11
+```
+
 (this is going to take a few minutes)
 
 Switch installed java...
